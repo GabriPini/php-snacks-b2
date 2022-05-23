@@ -49,20 +49,23 @@ $ads = [
 </head>
 
 <body>
+<div class="container">
 
-<div class="card w-50">
-    <?php
-    $control = true;
-    while ($control) :
-        $active = rand(0, count($ads) - 1);
-        if ($ads[$active]['is_active']) : ?>
-            <img src="<?= $ads[$active]['image_path'] ?>">
-            <p><a href="<?= $ads[$active]['link'] ?>">Compralo a questo link!</a></p>
-    <?php
-            $control = false;
-        endif;
-    endwhile;
-    ?>
+    <div class="card w-50 text-center m-auto mt-5 ">
+        <?php
+        $control = true;
+        while ($control) :
+            $active = rand(0, count($ads) - 1);
+            if ($ads[$active]['is_active']) : ?>
+                <img class="w-100" src="<?= $ads[$active]['image_path'] ?>">
+                <p><a href="<?= $ads[$active]['link'] ?>">Compralo a questo link!</a></p>
+        <?php
+                $control = false;
+            endif;
+        endwhile;
+        ?>
+    </div>
+
 </div>
 
 </body>
